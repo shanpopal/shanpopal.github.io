@@ -1,1 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Website</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
 
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('hero.jpg') no-repeat center center/cover;
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      background: #ff6f61;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    /* Properties Section */
+    .properties {
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .property-list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .property {
+      width: 30%;
+      margin-bottom: 20px;
+    }
+
+    .property img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* About Section */
+    .about {
+      background: #f4f4f4;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact form label {
+      margin: 10px 0 5px;
+    }
+
+    .contact form input, .contact form textarea {
+      width: 50%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact form button {
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <h1>Your Real Estate</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#properties">Properties</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>Find Your Dream Home</h2>
+      <p>Explore the best properties in your area.</p>
+      <a href="#properties" class="btn">View Properties</a>
+    </div>
+  </section>
+
+  <!-- Properties Section -->
+  <section id="properties" class="properties">
+    <div class="container">
+      <h2>Featured Properties</h2>
+      <div class="property-list">
+        <div class="property">
+          <img src="property1.jpg" alt="Property 1">
+          <h3>Luxury Villa</h3>
+          <p>$1,200,000</p>
+        </div>
+        <div class="property">
+          <img src="property2.jpg" alt="Property 2">
+          <h3>Modern Apartment</h3>
+          <p>$750,000</p>
+        </div>
+        <div class="property">
+          <img src="property3.jpg" alt="Property 3">
+          <h3>Country House</h3>
+          <p>$950,000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We are a dedicated team of real estate professionals helping you find the perfect home. With years of experience, we ensure a seamless buying and selling process.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Your Real Estate. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Contact Form Submission
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Thank you for contacting us! We will get back to you soon.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
