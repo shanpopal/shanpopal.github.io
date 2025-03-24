@@ -15,6 +15,7 @@
       padding: 0;
       line-height: 1.6;
       color: #333;
+      background-color: #fff;
     }
 
     h1, h2, h3 {
@@ -30,7 +31,7 @@
 
     /* Header */
     header {
-      background: #2c3e50;
+      background: #e74c3c; /* Watermelon Red */
       color: #fff;
       padding: 20px 0;
     }
@@ -59,15 +60,16 @@
     }
 
     nav ul li a:hover {
-      color: #ff6f61;
+      color: #2ecc71; /* Watermelon Green */
     }
 
     /* Hero Section */
     .hero {
-      background: url('https://i.pinimg.com/474x/3e/44/4b/3e444b544d967b398498f29f9d921fe1.jpg') no-repeat center center/cover;
+      background: #2ecc71; /* Watermelon Green */
       color: #fff;
       padding: 150px 0;
       text-align: center;
+      position: relative;
     }
 
     .hero h2 {
@@ -81,7 +83,7 @@
     }
 
     .btn {
-      background: #ff6f61;
+      background: #e74c3c; /* Watermelon Red */
       color: #fff;
       padding: 12px 24px;
       text-decoration: none;
@@ -90,8 +92,22 @@
     }
 
     .btn:hover {
-      background: #e65a50;
+      background: #c0392b; /* Darker Red */
       transform: scale(1.05);
+    }
+
+    /* Circle Image */
+    .circle-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 auto;
+      position: absolute;
+      top: -75px; /* Adjust to sit above the text */
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid #fff;
+      background: url('https://i.pinimg.com/474x/3e/44/4b/3e444b544d967b398498f29f9d921fe1.jpg') no-repeat center center/cover;
     }
 
     /* YouTube Video Section */
@@ -116,7 +132,7 @@
     }
 
     .properties h2 {
-      color: #2c3e50;
+      color: #e74c3c; /* Watermelon Red */
     }
 
     .property-list {
@@ -147,7 +163,7 @@
 
     .property h3 {
       margin: 10px 0;
-      color: #2c3e50;
+      color: #e74c3c; /* Watermelon Red */
     }
 
     .property p {
@@ -157,7 +173,7 @@
 
     /* Maker Info Section */
     .maker-info {
-      background: #2c3e50;
+      background: #e74c3c; /* Watermelon Red */
       color: #fff;
       padding: 20px 0;
       text-align: center;
@@ -168,13 +184,13 @@
     }
 
     .maker-info a {
-      color: #ff6f61;
+      color: #2ecc71; /* Watermelon Green */
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     .maker-info a:hover {
-      color: #e65a50;
+      color: #27ae60; /* Darker Green */
     }
 
     /* Footer */
@@ -204,6 +220,7 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
+    <div class="circle-image"></div>
     <div class="container">
       <h2>Find Your Dream Home</h2>
       <p>Explore the best properties in your area.</p>
