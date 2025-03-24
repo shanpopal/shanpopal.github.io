@@ -30,7 +30,7 @@
 
     /* Header */
     header {
-      background: #2c3e50; /* Dark blue */
+      background: #2c3e50;
       color: #fff;
       padding: 20px 0;
     }
@@ -59,30 +59,7 @@
     }
 
     nav ul li a:hover {
-      color: #ff6f61; /* Coral color */
-    }
-
-    /* Top Section - Working For */
-    .working-for {
-      background: #ecf0f1; /* Light gray */
-      padding: 50px 0;
-      text-align: center;
-    }
-
-    .working-for img {
-      width: 150px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
-
-    .working-for h2 {
-      font-size: 2rem;
-      color: #2c3e50;
-    }
-
-    .working-for p {
-      font-size: 1.1rem;
-      color: #666;
+      color: #ff6f61;
     }
 
     /* Hero Section */
@@ -104,7 +81,7 @@
     }
 
     .btn {
-      background: #ff6f61; /* Coral color */
+      background: #ff6f61;
       color: #fff;
       padding: 12px 24px;
       text-decoration: none;
@@ -113,8 +90,22 @@
     }
 
     .btn:hover {
-      background: #e65a50; /* Darker coral */
+      background: #e65a50;
       transform: scale(1.05);
+    }
+
+    /* YouTube Video Section */
+    .youtube-video {
+      text-align: center;
+      padding: 50px 0;
+      background: #f4f4f4;
+    }
+
+    .video-wrapper iframe {
+      width: 80%;
+      max-width: 800px;
+      height: 450px;
+      border-radius: 10px;
     }
 
     /* Properties Section */
@@ -164,72 +155,6 @@
       color: #666;
     }
 
-    /* About Section */
-    .about {
-      background: #f4f4f4;
-      padding: 50px 0;
-      text-align: center;
-    }
-
-    .about h2 {
-      color: #2c3e50;
-    }
-
-    .about p {
-      max-width: 800px;
-      margin: 0 auto;
-      color: #666;
-    }
-
-    /* Contact Section */
-    .contact {
-      padding: 50px 0;
-      text-align: center;
-      background: #fff;
-    }
-
-    .contact h2 {
-      color: #2c3e50;
-    }
-
-    .contact form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .contact form label {
-      margin: 10px 0 5px;
-      color: #2c3e50;
-    }
-
-    .contact form input, .contact form textarea {
-      width: 50%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      transition: border-color 0.3s ease;
-    }
-
-    .contact form input:focus, .contact form textarea:focus {
-      border-color: #ff6f61;
-    }
-
-    .contact form button {
-      background: #2c3e50;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .contact form button:hover {
-      background: #ff6f61;
-    }
-
     /* Maker Info Section */
     .maker-info {
       background: #2c3e50;
@@ -277,21 +202,24 @@
     </div>
   </header>
 
-  <!-- Working For Section -->
-  <section class="working-for">
-    <div class="container">
-      <img src="https://i.pinimg.com/474x/3e/44/4b/3e444b544d967b398498f29f9d921fe1.jpg" alt="Team Logo">
-      <h2>Redmax™</h2>
-      <p>Redmax™ is a real estate company that is here to give you the best service to help you find your dream home.</p>
-    </div>
-  </section>
-
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="container">
       <h2>Find Your Dream Home</h2>
       <p>Explore the best properties in your area.</p>
       <a href="#properties" class="btn">View Properties</a>
+    </div>
+  </section>
+
+  <!-- YouTube Video Section -->
+  <section class="youtube-video">
+    <div class="container">
+      <h2>Explore Redmax™</h2>
+      <p>Watch our latest video to learn more about how we help you find the perfect home.</p>
+      <div class="video-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+        title="Redmax™ Introduction" frameborder="0" allowfullscreen></iframe>
+      </div>
     </div>
   </section>
 
@@ -302,43 +230,21 @@
       <div class="property-list">
         <div class="property">
           <img src="https://static.vecteezy.com/system/resources/thumbnails/000/355/795/small_2x/Real_Estate__28101_29.jpg" alt="no houses right now, sorry!">
-          <h3>no houses right now, sorry!</h3>
-          <p>$0</p>
-        </div>
-        <div class="property">
-          <img src="https://static.vecteezy.com/system/resources/thumbnails/000/355/795/small_2x/Real_Estate__28101_29.jpg" alt="no houses right now, sorry!">
-          <h3>no houses right now, sorry!</h3>
-          <p>$0</p>
-        </div>
-        <div class="property">
-          <img src="https://static.vecteezy.com/system/resources/thumbnails/000/355/795/small_2x/Real_Estate__28101_29.jpg" alt="no houses right now, sorry!">
-          <h3>no houses right now, sorry!</h3>
+          <h3>No houses right now, sorry!</h3>
           <p>$0</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2>About Redmax™</h2>
-      <p>Redmax™ is a real estate company to help you with your needs of finding a proper home. We help clients find their dream homes.</p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="container">
   <!-- Maker Info Section -->
   <div class="maker-info">
     <div class="container">
-      <h3>Have querys?</h3>
+      <h3>Have queries?</h3>
       <p>Email us: <a href="mailto:redmax5g@gmail.com">redmax5g@gmail.com</a></p>
-      <p>Call us: <a href="tel:+1234567890">+1 (647) 717-1615</a></p>
+      <p>Call us: <a href="tel:+16477171615">+1 (647) 717-1615</a></p>
     </div>
   </div>
-
 
   <!-- Footer -->
   <footer>
@@ -349,7 +255,6 @@
 
   <!-- JavaScript -->
   <script>
-    // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -357,13 +262,6 @@
           behavior: 'smooth'
         });
       });
-    });
-
-    // Contact Form Submission
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      alert('Thank you for contacting us! We will get back to you soon.');
-      this.reset();
     });
   </script>
 </body>
