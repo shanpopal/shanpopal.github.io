@@ -8,9 +8,191 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    /* Previous existing styles... */
+    /* General Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9; /* Light gray background */
+    }
 
-    /* Sidebar Menu Styles */
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background: #c0392b; /* Darker Red */
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #27ae60; /* Darker Green */
+    }
+
+    /* Hero Section */
+    .hero {
+      background: #27ae60; /* Dark Green */
+      color: #fff;
+      padding: 150px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero h2 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #e74c3c, #c0392b); /* Gradient from watermelon red */
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #c0392b, #e74c3c); /* Reverse gradient on hover */
+      transform: scale(1.05);
+    }
+
+    /* Circle Image */
+    .circle-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 auto;
+      position: absolute;
+      top: -75px; /* Adjust to sit above the text */
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid #fff;
+      background: url('https://i.pinimg.com/474x/3e/44/4b/3e444b544d967b398498f29f9d921fe1.jpg') no-repeat center center/cover;
+    }
+
+    /* YouTube Video Section */
+    .youtube-video {
+      text-align: center;
+      padding: 50px 0;
+      background: #f4f4f4;
+    }
+
+    .video-wrapper iframe {
+      width: 80%;
+      max-width: 800px;
+      height: 450px;
+      border-radius: 10px;
+    }
+
+    /* Properties Section */
+    .properties {
+      padding: 50px 0;
+      text-align: center;
+      background: #fff;
+    }
+
+    .properties h2 {
+      color: #e74c3c; /* Watermelon Red */
+    }
+
+    .property-list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .property {
+      width: 30%;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .property:hover {
+      transform: translateY(-10px);
+    }
+
+    .property img {
+      width: 100%;
+      border-radius: 10px;
+      transition: opacity 0.3s ease;
+    }
+
+    .property img:hover {
+      opacity: 0.9;
+    }
+
+    .property h3 {
+      margin: 10px 0;
+      color: #e74c3c; /* Watermelon Red */
+    }
+
+    .property p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    /* Maker Info Section */
+    .maker-info {
+      background: #c0392b; /* Darker Red */
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .maker-info h3 {
+      margin-bottom: 10px;
+    }
+
+    .maker-info a {
+      color: #27ae60; /* Darker Green */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .maker-info a:hover {
+      color: #1e8449; /* Even darker Green */
+    }
+
     .sidebar {
       position: fixed;
       top: 0;
@@ -157,6 +339,93 @@
         sidebar.classList.remove('active');
         mainContent.classList.remove('sidebar-open');
       }
+      
+    /* Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <h1>Your Real Estate</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#properties">Properties</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="circle-image"></div>
+    <div class="container">
+      <h2>Find Your Dream Home</h2>
+      <p>Explore the best properties in your area.</p>
+      <a href="#properties" class="btn">View Properties</a>
+    </div>
+  </section>
+
+  <!-- YouTube Video Section -->
+  <section class="youtube-video">
+    <div class="container">
+      <h2>Explore Redmax™</h2>
+      <p>Watch our latest video to learn more about how we help you find the perfect home.</p>
+      <div class="video-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zumJJUL_ruM" 
+        title="Redmax™ Introduction" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Properties Section -->
+  <section id="properties" class="properties">
+    <div class="container">
+      <h2>Featured Properties</h2>
+      <div class="property-list">
+        <div class="property">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/000/355/795/small_2x/Real_Estate__28101_29.jpg" alt="no houses right now, sorry!">
+          <h3>No houses right now, sorry!</h3>
+          <p>$0</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Maker Info Section -->
+  <div class="maker-info">
+    <div class="container">
+      <h3>Have queries?</h3>
+      <p>Email us: <a href="mailto:redmax5g@gmail.com">redmax5g@gmail.com</a></p>
+      <p>Call us: <a href="tel:+16477171615">+1 (647) 717-1615</a></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Redmax™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
     });
   </script>
 </body>
