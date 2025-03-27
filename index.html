@@ -95,17 +95,47 @@
       left: 260px;
     }
 
+    /* Red Bar at the Top (above menu icon) */
+    .top-bar {
+      background-color: #c0392b;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .top-bar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-bar ul li {
+      display: inline;
+      margin: 0 20px;
+    }
+
+    .top-bar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .top-bar ul li a:hover {
+      color: #f39c12;
+    }
+
     /* Header */
     header {
       background: #c0392b;
       color: #fff;
       padding: 20px 0;
       position: relative;
+      z-index: 2;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem; /* Increased font size */
       text-align: center;
     }
 
@@ -275,6 +305,16 @@
   </style>
 </head>
 <body>
+  <!-- Top Red Bar with List -->
+  <div class="top-bar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#properties">Properties</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
   <!-- Sidebar Navigation -->
   <div class="sidebar" id="sidebar">
     <a href="javascript:void(0)" class="close-btn" id="close-btn">&times;</a>
@@ -288,7 +328,6 @@
 
   <!-- Open Sidebar Button -->
   <button class="open-btn" id="open-btn">☰</button>
-
 
   <!-- Hero Section -->
   <section id="home" class="hero">
@@ -379,4 +418,5 @@
   </script>
 </body>
 </html>
+
 
