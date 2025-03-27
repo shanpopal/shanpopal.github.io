@@ -99,8 +99,10 @@
     .top-bar {
       background-color: #c0392b;
       color: #fff;
-      padding: 10px 0;
+      padding: 20px 0;
       text-align: center;
+      width: 100%;
+      margin: 0;
     }
 
     .top-bar ul {
@@ -111,17 +113,17 @@
 
     .top-bar ul li {
       display: inline;
-      margin: 0 20px;
+      margin: 0 40px;
     }
 
     .top-bar ul li a {
-      color: #fff;
+      color: transparent;
       text-decoration: none;
       font-size: 1.2rem;
     }
 
     .top-bar ul li a:hover {
-      color: #f39c12;
+      color: transparent;
     }
 
     /* Header */
@@ -143,9 +145,13 @@
     .hero {
       background: #27ae60;
       color: #fff;
-      padding: 150px 0;
+      padding: 80px 0 150px; /* Adjusted padding */
       text-align: center;
       position: relative;
+    }
+
+    .hero h1 {
+      margin-bottom: 10px; /* Added space below the title */
     }
 
     .hero h2 {
@@ -172,16 +178,12 @@
       transform: scale(1.05);
     }
 
-    /* Circle Image */
+    /* Circle Image - UPDATED POSITION */
     .circle-image {
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      margin: 0 auto;
-      position: absolute;
-      top: -75px;
-      left: 50%;
-      transform: translateX(-50%);
+      margin: 0 auto 15px; /* 15px bottom margin for spacing */
       border: 5px solid #fff;
       background: url('https://i.pinimg.com/474x/3e/44/4b/3e444b544d967b398498f29f9d921fe1.jpg') no-repeat center center/cover;
     }
@@ -308,10 +310,10 @@
   <!-- Top Red Bar with List -->
   <div class="top-bar">
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#properties">Properties</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
     </ul>
   </div>
 
@@ -329,10 +331,10 @@
   <!-- Open Sidebar Button -->
   <button class="open-btn" id="open-btn">☰</button>
 
-  <!-- Hero Section -->
+  <!-- Hero Section - UPDATED LOGO POSITION -->
   <section id="home" class="hero">
-    <div class="circle-image"></div>
     <div class="container">
+      <div class="circle-image"></div> <!-- Now positioned right below the title -->
       <h1>Redmax™</h1>
       <h2>Find Your Dream Home</h2>
       <p>Explore the best properties in your area.</p>
