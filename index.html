@@ -7,6 +7,8 @@
   <title>Redmax™</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     /* General Styles */
     body {
@@ -15,7 +17,8 @@
       padding: 0;
       line-height: 1.6;
       color: #333;
-      background-color: #f9f9f9; /* Light gray background */
+      background-color: #f9f9f9;
+      transition: margin-left 0.3s ease;
     }
 
     h1, h2, h3 {
@@ -27,45 +30,88 @@
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
+      padding-left: 20px; /* Add padding to account for sidebar */
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      background-color: #c0392b;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+
+    .sidebar a {
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      color: white;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #e74c3c;
+      color: #fff;
+    }
+
+    .sidebar .close-btn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 2rem;
+      margin-left: 50px;
+    }
+
+    .open-btn {
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      z-index: 1001;
+    }
+
+    /* Show sidebar when active */
+    body.sidebar-active {
+      margin-left: 250px;
+    }
+
+    body.sidebar-active .sidebar {
+      left: 0;
+    }
+
+    body.sidebar-active .open-btn {
+      left: 260px;
     }
 
     /* Header */
     header {
-      background: #c0392b; /* Darker Red */
+      background: #c0392b;
       color: #fff;
       padding: 20px 0;
+      position: relative;
     }
 
     header h1 {
       margin: 0;
       font-size: 2.5rem;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    nav ul li {
-      margin-left: 20px;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #27ae60; /* Darker Green */
+      text-align: center;
     }
 
     /* Hero Section */
     .hero {
-      background: #27ae60; /* Dark Green */
+      background: #27ae60;
       color: #fff;
       padding: 150px 0;
       text-align: center;
@@ -83,7 +129,7 @@
     }
 
     .btn {
-      background: linear-gradient(135deg, #e74c3c, #c0392b); /* Gradient from watermelon red */
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
       color: #fff;
       padding: 12px 24px;
       text-decoration: none;
@@ -92,7 +138,7 @@
     }
 
     .btn:hover {
-      background: linear-gradient(135deg, #c0392b, #e74c3c); /* Reverse gradient on hover */
+      background: linear-gradient(135deg, #c0392b, #e74c3c);
       transform: scale(1.05);
     }
 
@@ -103,7 +149,7 @@
       border-radius: 50%;
       margin: 0 auto;
       position: absolute;
-      top: -75px; /* Adjust to sit above the text */
+      top: -75px;
       left: 50%;
       transform: translateX(-50%);
       border: 5px solid #fff;
@@ -132,7 +178,7 @@
     }
 
     .properties h2 {
-      color: #e74c3c; /* Watermelon Red */
+      color: #e74c3c;
     }
 
     .property-list {
@@ -163,7 +209,7 @@
 
     .property h3 {
       margin: 10px 0;
-      color: #e74c3c; /* Watermelon Red */
+      color: #e74c3c;
     }
 
     .property p {
@@ -173,7 +219,7 @@
 
     /* Maker Info Section */
     .maker-info {
-      background: #c0392b; /* Darker Red */
+      background: #c0392b;
       color: #fff;
       padding: 20px 0;
       text-align: center;
@@ -184,162 +230,15 @@
     }
 
     .maker-info a {
-      color: #27ae60; /* Darker Green */
+      color: #27ae60;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     .maker-info a:hover {
-      color: #1e8449; /* Even darker Green */
+      color: #1e8449;
     }
 
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100%;
-      background-color: #c0392b;
-      transition: left 0.3s ease;
-      z-index: 1000;
-      padding-top: 60px;
-    }
-
-    .sidebar.active {
-      left: 0;
-    }
-
-    .sidebar-toggle {
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      cursor: pointer;
-      z-index: 1001;
-      display: flex;
-      flex-direction: column;
-      width: 30px;
-    }
-
-    .sidebar-toggle span {
-      height: 3px;
-      width: 100%;
-      background-color: #fff;
-      margin: 4px 0;
-      transition: 0.4s;
-    }
-
-    .sidebar-toggle.active span:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .sidebar-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .sidebar-toggle.active span:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
-    }
-
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .sidebar ul li {
-      padding: 15px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .sidebar ul li a {
-      color: #fff;
-      text-decoration: none;
-      display: block;
-      transition: color 0.3s ease;
-    }
-
-    .sidebar ul li a:hover {
-      color: #27ae60;
-    }
-
-    /* Adjust main content when sidebar is open */
-    .content-overlay {
-      transition: transform 0.3s ease;
-    }
-
-    .content-overlay.sidebar-open {
-      transform: translateX(250px);
-    }
-
-    /* Media Query for Responsiveness */
-    @media (max-width: 768px) {
-      header nav {
-        display: none;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- Sidebar Toggle -->
-  <div class="sidebar-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <!-- Sidebar Menu -->
-  <div class="sidebar">
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#properties">Properties</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="mailto:redmax5g@gmail.com">Email Us</a></li>
-      <li><a href="tel:+16477171615">Call Us</a></li>
-    </ul>
-  </div>
-
-  <!-- Rest of the existing HTML content remains the same -->
-  <!-- Header Section -->
-  <header>
-    <div class="container">
-      <h1>Your Real Estate</h1>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#properties">Properties</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Rest of the content remains the same as in the original document -->
-  
-  <!-- JavaScript for Sidebar -->
-  <script>
-    // Previous smooth scroll script remains the same
-
-    // Sidebar Toggle Functionality
-    const sidebarToggle = document.querySelector('.sidebar-toggle');
-    const sidebar = document.querySelector('.sidebar');
-    const mainContent = document.body;
-
-    sidebarToggle.addEventListener('click', () => {
-      sidebarToggle.classList.toggle('active');
-      sidebar.classList.toggle('active');
-      mainContent.classList.toggle('sidebar-open');
-    });
-
-    // Close sidebar when clicking outside
-    document.addEventListener('click', (event) => {
-      if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
-        sidebarToggle.classList.remove('active');
-        sidebar.classList.remove('active');
-        mainContent.classList.remove('sidebar-open');
-      }
-      
     /* Footer */
     footer {
       background: #222;
@@ -347,21 +246,53 @@
       text-align: center;
       padding: 20px 0;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .property {
+        width: 100%;
+        max-width: 350px;
+      }
+      
+      .container {
+        padding-left: 0;
+      }
+      
+      body.sidebar-active {
+        margin-left: 0;
+        overflow: hidden;
+      }
+      
+      body.sidebar-active .sidebar {
+        width: 100%;
+        left: 0;
+      }
+      
+      body.sidebar-active .open-btn {
+        left: calc(100% - 50px);
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Sidebar Navigation -->
+  <div class="sidebar" id="sidebar">
+    <a href="javascript:void(0)" class="close-btn" id="close-btn">&times;</a>
+    <a href="#home"><i class="fas fa-home"></i> Home</a>
+    <a href="#properties"><i class="fas fa-building"></i> Properties</a>
+    <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="mailto:redmax5g@gmail.com"><i class="fas fa-envelope"></i> Email Us</a>
+    <a href="tel:+16477171615"><i class="fas fa-phone"></i> Call Us</a>
+  </div>
+
+  <!-- Open Sidebar Button -->
+  <button class="open-btn" id="open-btn">☰</button>
+
   <!-- Header Section -->
   <header>
     <div class="container">
       <h1>Your Real Estate</h1>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#properties">Properties</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
@@ -419,6 +350,29 @@
 
   <!-- JavaScript -->
   <script>
+    // Sidebar functionality
+    const sidebar = document.getElementById('sidebar');
+    const openBtn = document.getElementById('open-btn');
+    const closeBtn = document.getElementById('close-btn');
+    
+    openBtn.addEventListener('click', () => {
+      document.body.classList.add('sidebar-active');
+    });
+    
+    closeBtn.addEventListener('click', () => {
+      document.body.classList.remove('sidebar-active');
+    });
+    
+    // Close sidebar when clicking on a link (for mobile)
+    document.querySelectorAll('.sidebar a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          document.body.classList.remove('sidebar-active');
+        }
+      });
+    });
+
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
